@@ -17,7 +17,7 @@ export default () => {
                     <input 
                     type="checkbox"
                     checked={todo.complete}
-                    onChange={toggleTodo.bind(null, todo.Id)}
+                    onChange={toggleTodo.bind(null, todo.id)}
                     />
                     <span className={todo.complete ? 'complete' : null}>{todo.name}</span>
                     <span className="delete-button" onClick={deleteTodo.bind(null, todo.id)}>X</span>

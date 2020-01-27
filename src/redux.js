@@ -1,4 +1,4 @@
-import { createStore, bindActionCreators } from 'redux';
+import { createStore } from 'redux';
 import uuid from 'uuid/v4';
 
 const initialState = {
@@ -32,7 +32,10 @@ function reducer(state, action) {
         case 'TOGGLE_TODO':
             return {
                 ...state,
-                todos: state.todos.map((todo) => todo.id === action.payload ? {...todo, complete: !todo.complete} : todo)
+                todos: state.todos.map((todo) => 
+                todo.id === action.payload
+                 ? {...todo, complete: !todo.complete} 
+                 : todo)
             };
         case 'DELETE_TODO':
             return {
